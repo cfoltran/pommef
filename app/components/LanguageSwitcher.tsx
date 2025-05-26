@@ -13,15 +13,21 @@ export default function LanguageSwitcher() {
   };
 
   return (
-    <div className="fixed top-4 right-4 z-50">
-      <select
-        onChange={(e) => switchLanguage(e.target.value)}
-        className="bg-white border border-gray-300 rounded-md px-3 py-1 text-sm"
-        defaultValue={pathname.startsWith('/fr') ? 'fr' : 'en'}
+    <div className="flex items-center gap-2">
+      <button
+        onClick={() => switchLanguage('en')}
+        className={`p-2 rounded-full hover:bg-white/10 transition-colors ${pathname.startsWith('/en') ? 'bg-white/20' : ''}`}
+        aria-label="Switch to English"
       >
-        <option value="en">English 🇬🇧</option>
-        <option value="fr">Français 🇫🇷</option>
-      </select>
+        🇬🇧
+      </button>
+      <button
+        onClick={() => switchLanguage('fr')}
+        className={`p-2 rounded-full hover:bg-white/10 transition-colors ${pathname.startsWith('/fr') ? 'bg-white/20' : ''}`}
+        aria-label="Switch to French"
+      >
+        🇫🇷
+      </button>
     </div>
   );
 } 

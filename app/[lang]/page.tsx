@@ -1,6 +1,7 @@
 import { en } from '../i18n/locales/en';
 import { fr } from '../i18n/locales/fr';
 import LanguageSwitcher from '../components/LanguageSwitcher';
+import Navbar from '../components/Navbar';
 
 const translations = {
   en,
@@ -19,8 +20,8 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
   const t = translations[lang];
 
   return (
-    <main className="min-h-screen p-8 max-w-4xl mx-auto">
-      <LanguageSwitcher />
+    <main className="min-h-screen p-8 max-w-4xl mx-auto pt-24">
+      <Navbar />
       
       <header className="text-center mb-12">
         <h1 className="text-3xl font-bold mb-2">{t.header.title}</h1>
@@ -33,7 +34,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         </p>
       </header>
 
-      <section className="mb-12">
+      <section id="experience" className="mb-12">
         <h2 className="text-2xl font-bold mb-6">{t.sections.experience}</h2>
         
         {/* Infinit */}
@@ -120,7 +121,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         </article>
       </section>
 
-      <section className="mb-12">
+      <section id="projects" className="mb-12">
         <h2 className="text-2xl font-bold mb-6">{t.sections.projects}</h2>
         
         {/* Unbubl */}
@@ -157,7 +158,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         </article>
       </section>
 
-      <section className="mb-12">
+      <section id="certifications" className="mb-12">
         <h2 className="text-2xl font-bold mb-6">{t.sections.certifications}</h2>
         <ul className="list-disc pl-6">
           {t.certifications.list.map((cert, index) => (
@@ -168,12 +169,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         </ul>
       </section>
 
-      <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-6">{t.sections.languages}</h2>
-        <p>{t.languages.list}</p>
-      </section>
-
-      <section className="mb-12">
+      <section id="education" className="mb-12">
         <h2 className="text-2xl font-bold mb-6">{t.sections.education}</h2>
         
         {/* 42 Paris */}

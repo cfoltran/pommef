@@ -3,7 +3,6 @@
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import LanguageSwitcher from './LanguageSwitcher';
-import ThemeSwitcher from './ThemeSwitcher';
 
 const translations = {
   en: {
@@ -105,7 +104,6 @@ export default function Navbar() {
             <div className="h-4 w-px bg-gray-300 dark:bg-gray-700" />
           </div>
           <LanguageSwitcher />
-          <ThemeSwitcher />
         </div>
       </div>
 

@@ -5,10 +5,18 @@ import LanguageSwitcher from '../components/LanguageSwitcher';
 const translations = {
   en,
   fr,
-};
+} as const;
 
-export default function Home({ params }: { params: { lang: string } }) {
-  const t = translations[params.lang as keyof typeof translations] || translations.en;
+type SupportedLanguages = keyof typeof translations;
+
+function isValidLanguage(lang: string): lang is SupportedLanguages {
+  return lang in translations;
+}
+
+export default async function Home({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang: langParam } = await params;
+  const lang = isValidLanguage(langParam) ? langParam : 'en';
+  const t = translations[lang];
 
   return (
     <main className="min-h-screen p-8 max-w-4xl mx-auto">

@@ -13,6 +13,13 @@ function isValidLanguage(lang: string): lang is SupportedLanguages {
   return lang in translations;
 }
 
+export function generateStaticParams() {
+  return [
+    { lang: 'en' },
+    { lang: 'fr' },
+  ];
+}
+
 export default async function Home({ params }: { params: Promise<{ lang: string }> }) {
   const { lang: langParam } = await params;
   const lang = isValidLanguage(langParam) ? langParam : 'en';

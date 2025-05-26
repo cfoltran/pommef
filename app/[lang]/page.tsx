@@ -15,6 +15,7 @@ function isValidLanguage(lang: string): lang is SupportedLanguages {
 
 export function generateStaticParams() {
   return [
+    { lang: '' },  // Root path
     { lang: 'en' },
     { lang: 'fr' },
   ];

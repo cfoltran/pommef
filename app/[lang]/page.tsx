@@ -1,6 +1,5 @@
 import { en } from '../i18n/locales/en';
 import { fr } from '../i18n/locales/fr';
-import LanguageSwitcher from '../components/LanguageSwitcher';
 import Navbar from '../components/Navbar';
 
 const translations = {

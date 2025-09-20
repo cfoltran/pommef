@@ -5,8 +5,15 @@ const locales = ['en', 'fr'];
 const defaultLocale = 'en';
 
 export function middleware(request: NextRequest) {
-  // Check if there is any supported locale in the pathname
   const pathname = request.nextUrl.pathname;
+  
+  // Skip static files and assets
+  const isStaticAsset = pathname.match(/\.(png|jpg|jpeg|svg|webp|gif|ico|css|js|json)$/);
+  if (isStaticAsset) {
+    return;
+  }
+  
+  // Check if there is any supported locale in the pathname
   const pathnameIsMissingLocale = locales.every(
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   );
@@ -25,7 +32,7 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // Skip all internal paths (_next)
-    '/((?!_next|api|favicon.ico).*)',
+    // Skip all internal paths (_next), api routes, static files
+    '/((?!_next|api|favicon.ico|.*\\.).+)',
   ],
 }; 

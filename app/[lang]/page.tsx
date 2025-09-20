@@ -2,6 +2,7 @@ import { en } from '../i18n/locales/en';
 import { fr } from '../i18n/locales/fr';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import Image from 'next/image';
 
 const translations = {
   en,
@@ -30,187 +31,97 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
   return (
     <>
       <Navbar />
-      <main className="min-h-screen p-8 max-w-4xl mx-auto pt-24">
-        <header className="text-center mb-12">
-          <h1 className="text-3xl font-bold mb-2">{t.header.title}</h1>
-          <h2 className="text-xl mb-4">{t.header.subtitle}</h2>
+  <main className="min-h-screen p-8 max-w-4xl mx-auto pt-24 bg-white text-black">
+        {/* Header */}
+        <header className="text-center mb-16">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-black">{t.header.title}</h1>
+          <p className="text-xl md:text-2xl text-gray-600">{t.header.subtitle}</p>
         </header>
 
-        <section id="experience" className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">{t.sections.experience}</h2>
-          
-          {/* Infinit */}
-          <article className="mb-8">
-            <h3 className="text-xl font-semibold">
-              <strong>{t.experience.infinit.title},</strong>{' '}
-              <a href="https://infinit.com">{t.experience.infinit.company}</a> — {t.experience.infinit.period}
-            </h3>
-            <p className="my-4">{t.experience.infinit.description}</p>
-            <p><strong>{t.experience.infinit.tasks}</strong></p>
-            <ul className="list-disc pl-6 mb-4">
-              {t.experience.infinit.tasksList.map((task, index) => (
-                <li key={index}>{task}</li>
-              ))}
-            </ul>
-            <p>
-              <strong>{t.experience.infinit.tools}</strong> {t.experience.infinit.toolsList}
-            </p>
-          </article>
-
-          {/* Yuzu */}
-          <article className="mb-8">
-            <h3 className="text-xl font-semibold">
-              <strong>{t.experience.yuzu.title},</strong>{' '}
-              <a href="https://apps.apple.com/fr/app/yuzu/id6443933811">{t.experience.yuzu.company}</a> — {t.experience.yuzu.period}
-            </h3>
-            <p className="my-4">{t.experience.yuzu.description}</p>
-            <p><strong>{t.experience.yuzu.tasks}</strong></p>
-            <ul className="list-disc pl-6 mb-4">
-              {t.experience.yuzu.tasksList.map((task, index) => (
-                <li key={index}>{task}</li>
-              ))}
-            </ul>
-            <p>
-              <strong>{t.experience.yuzu.tools}</strong> {t.experience.yuzu.toolsList}
-            </p>
-          </article>
-
-          {/* Microport */}
-          <article className="mb-8">
-            <h3 className="text-xl font-semibold">
-              <strong>{t.experience.microport.title},</strong>{' '}
-              <a href="https://microport.com">{t.experience.microport.company}</a> — {t.experience.microport.period}
-            </h3>
-            <p className="my-4">{t.experience.microport.description}</p>
-            <p><strong>{t.experience.microport.tasks}</strong></p>
-            <ul className="list-disc pl-6 mb-4">
-              {t.experience.microport.tasksList.map((task, index) => (
-                <li key={index}>{task}</li>
-              ))}
-            </ul>
-            <p>
-              <strong>{t.experience.microport.tools}</strong> {t.experience.microport.toolsList}
-            </p>
-          </article>
-
-          {/* Ateme */}
-          <article className="mb-8">
-            <h3 className="text-xl font-semibold">
-              <strong>{t.experience.ateme.title},</strong>{' '}
-              <a href="https://www.ateme.com">{t.experience.ateme.company}</a> — {t.experience.ateme.period}
-            </h3>
-            <p className="my-4">{t.experience.ateme.description}</p>
-            <p><strong>{t.experience.ateme.tasks}</strong></p>
-            <ul className="list-disc pl-6 mb-4">
-              {t.experience.ateme.tasksList.map((task, index) => (
-                <li key={index}>{task}</li>
-              ))}
-            </ul>
-            <p>
-              <strong>{t.experience.ateme.tools}</strong> {t.experience.ateme.toolsList}
-            </p>
-          </article>
-
-          {/* Stoke */}
-          <article className="mb-8">
-            <h3 className="text-xl font-semibold">
-              <strong>{t.experience.stoke.title}</strong> — {t.experience.stoke.period}
-            </h3>
-            <p className="my-4">{t.experience.stoke.description}</p>
-            <p>
-              <strong>{t.experience.stoke.tools}</strong> {t.experience.stoke.toolsList}
-            </p>
-          </article>
-        </section>
-
-        <section id="projects" className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">{t.sections.projects}</h2>
-          
-          {/* Unbubl */}
-          <article className="mb-8">
-            <h3 className="text-xl font-semibold">
-              <a href="https://unbubl.com/">{t.projects.unbubl.title}</a> — {t.projects.unbubl.period}
-            </h3>
-            <p className="my-4">{t.projects.unbubl.description}</p>
-            <p>
-              <strong>{t.projects.unbubl.tools}</strong> {t.projects.unbubl.toolsList}
-            </p>
-          </article>
-
-          {/* Deckart */}
-          <article className="mb-8">
-            <h3 className="text-xl font-semibold">
-              <a href="https://deckart.xyz/">{t.projects.deckart.title}</a> — {t.projects.deckart.period}
-            </h3>
-            <p className="my-4">{t.projects.deckart.description}</p>
-            <p>
-              <strong>{t.projects.deckart.tools}</strong> {t.projects.deckart.toolsList}
-            </p>
-          </article>
-
-          {/* Cococertif */}
-          <article className="mb-8">
-            <h3 className="text-xl font-semibold">
-              <a href="https://github.com/cfoltran/covid-attestation-gen">{t.projects.cococertif.title}</a> — {t.projects.cococertif.period}
-            </h3>
-            <p className="my-4">{t.projects.cococertif.description}</p>
-            <p>
-              <strong>{t.projects.cococertif.tools}</strong> {t.projects.cococertif.toolsList}
-            </p>
-          </article>
-        </section>
-
-        <section id="certifications" className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">{t.sections.certifications}</h2>
-          <ul className="list-disc pl-6">
-            {t.certifications.list.map((cert, index) => (
-              <li key={index}>
-                <a href={cert.link}>{cert.title}</a>
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <section id="education" className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">{t.sections.education}</h2>
-          
-          {/* 42 Paris */}
-          <div className="mb-8">
-            <p>
-              <a href="https://42.fr" target="_blank" rel="noopener noreferrer">{t.education.school42.name}</a> — {t.education.school42.location} ({t.education.school42.period})
-            </p>
-            <p className="my-4">{t.education.school42.description}</p>
-            
-            <h4 className="text-lg font-semibold mb-4">{t.education.school42.projects.title}</h4>
-            
-            {/* Hypertube */}
-            <div className="mb-6">
-              <p>
-                <a href="https://github.com/owalid/hypertube" target="_blank" rel="noopener noreferrer">{t.education.school42.projects.hypertube.title}</a> : {t.education.school42.projects.hypertube.description}
-              </p>
-              <p>
-                <strong>{t.education.school42.projects.hypertube.tools}</strong> {t.education.school42.projects.hypertube.toolsList}
-              </p>
+        {/* Mobile Apps Section */}
+        <section className="mb-16">
+          <div className="max-w-3xl mx-auto space-y-6">
+            {/* Deckart */}
+            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 transform hover:scale-[1.02] transition-transform duration-200 hover:shadow-lg">
+              <div className="flex items-start gap-6">
+                <Image src="/deckart.png" alt="Deckart app icon" width={96} height={96} className="w-24 h-24 flex-shrink-0" />
+                <div className="flex-1">
+                  <h3 className="text-xl font-semibold mb-2 text-left">{t.mobileApps.deckart.title}</h3>
+                  <p className="text-gray-600 mb-4 text-left leading-relaxed">{t.mobileApps.deckart.description}</p>
+                  <a
+                    href={t.mobileApps.deckart.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-blue-600 hover:underline"
+                  >
+                    Visit {t.mobileApps.deckart.title}
+                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
             </div>
-            
-            {/* Qinder */}
-            <div className="mb-6">
-              <p>
-                <a href="https://github.com/cfoltran/qinder" target="_blank" rel="noopener noreferrer">{t.education.school42.projects.qinder.title}</a> : {t.education.school42.projects.qinder.description}
-              </p>
-              <p>
-                <strong>{t.education.school42.projects.qinder.tools}</strong> {t.education.school42.projects.qinder.toolsList}
-              </p>
+
+            {/* Unbubl */}
+            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 transform hover:scale-[1.02] transition-transform duration-200 hover:shadow-lg">
+              <div className="flex items-start gap-6">
+                <Image src="/unbubl.png" alt="Unbubl app icon" width={96} height={96} className="w-24 h-24 flex-shrink-0" />
+                <div className="flex-1">
+                  <h3 className="text-xl font-semibold mb-2 text-left">{t.mobileApps.unbubl.title}</h3>
+                  <p className="text-gray-600 mb-4 text-left leading-relaxed">{t.mobileApps.unbubl.description}</p>
+                  <a
+                    href={t.mobileApps.unbubl.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-blue-600 hover:underline"
+                  >
+                    Visit {t.mobileApps.unbubl.title}
+                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="max-w-3xl mx-auto space-y-6">
+              {/* Mcpdoor */}
+              <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 transform hover:scale-[1.02] transition-transform duration-200 hover:shadow-lg">
+                <div className="flex items-start gap-6">
+                  <div className="w-24 h-24 rounded-[16px] shadow flex-shrink-0 flex items-center justify-center text-4xl">
+                    🚪
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold mb-2 text-left">{t.aiTools.mcpdoor.title}</h3>
+                    <p className="text-gray-600 mb-4 text-left leading-relaxed">{t.aiTools.mcpdoor.description}</p>
+                    <div className="mb-4">
+                      <iframe 
+                        style={{border: 0}} 
+                        width="100%" 
+                        height="330" 
+                        src="https://www.tella.tv/video/cmc9ipja8000p0cl4et7j06ha/embed?b=1&title=1&a=1&loop=0&t=0&muted=0&wt=1" 
+                        allowFullScreen
+                      />
+                    </div>
+                    <a
+                      href={t.aiTools.mcpdoor.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-blue-600 hover:underline"
+                    >
+                      Visit {t.aiTools.mcpdoor.title}
+                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          
-          {/* Paris Saclay */}
-          <p>
-            <a href="https://www.universite-paris-saclay.fr/fr" target="_blank" rel="noopener noreferrer">{t.education.parisSaclay.name}</a> — {t.education.parisSaclay.degree}, {t.education.parisSaclay.location} ({t.education.parisSaclay.period})
-          </p>
-        </section>
+        </section>          
+        <Footer />
       </main>
-      <Footer />
     </>
   );
 } 

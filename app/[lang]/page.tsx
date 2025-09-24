@@ -31,20 +31,20 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
   return (
     <>
       <Navbar />
-  <main className="min-h-screen p-8 max-w-4xl mx-auto pt-24 bg-white text-black">
+  <main className="min-h-screen px-4 sm:px-6 md:px-8 max-w-4xl mx-auto pt-24 bg-white text-black">
         {/* Header */}
-        <header className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-black">{t.header.title}</h1>
-          <p className="text-xl md:text-2xl text-gray-600">{t.header.subtitle}</p>
+        <header className="text-center mb-12 md:mb-16">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-black">{t.header.title}</h1>
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-600">{t.header.subtitle}</p>
         </header>
 
         {/* Mobile Apps Section */}
         <section className="mb-16">
-          <div className="max-w-3xl mx-auto space-y-6">
+          <div className="max-w-3xl mx-auto flex flex-col gap-6">
             {/* Deckart */}
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 transform hover:scale-[1.02] transition-transform duration-200 hover:shadow-lg">
-              <div className="flex items-start gap-6">
-                <Image src="/deckart.png" alt="Deckart app icon" width={96} height={96} className="w-24 h-24 flex-shrink-0" />
+            <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md border border-gray-200 transform hover:scale-[1.02] transition-transform duration-200 hover:shadow-lg">
+              <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+                <Image src="/deckart.png" alt="Deckart app icon" width={96} height={96} className="w-20 h-20 sm:w-24 sm:h-24 flex-shrink-0" />
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold mb-2 text-left">{t.mobileApps.deckart.title}</h3>
                   <p className="text-gray-600 mb-4 text-left leading-relaxed">{t.mobileApps.deckart.description}</p>
@@ -64,9 +64,9 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             </div>
 
             {/* Unbubl */}
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 transform hover:scale-[1.02] transition-transform duration-200 hover:shadow-lg">
-              <div className="flex items-start gap-6">
-                <Image src="/unbubl.png" alt="Unbubl app icon" width={96} height={96} className="w-24 h-24 flex-shrink-0" />
+            <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md border border-gray-200 transform hover:scale-[1.02] transition-transform duration-200 hover:shadow-lg">
+              <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+                <Image src="/unbubl.png" alt="Unbubl app icon" width={96} height={96} className="w-20 h-20 sm:w-24 sm:h-24 flex-shrink-0" />
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold mb-2 text-left">{t.mobileApps.unbubl.title}</h3>
                   <p className="text-gray-600 mb-4 text-left leading-relaxed">{t.mobileApps.unbubl.description}</p>
@@ -84,11 +84,11 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
                 </div>
               </div>
             </div>
-            <div className="max-w-3xl mx-auto space-y-6">
+            <div className="max-w-3xl mx-auto flex flex-col gap-6">
               {/* Mcpdoor */}
-              <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 transform hover:scale-[1.02] transition-transform duration-200 hover:shadow-lg">
-                <div className="flex items-start gap-6">
-                  <div className="w-24 h-24 rounded-[16px] shadow flex-shrink-0 flex items-center justify-center text-4xl">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md border border-gray-200 transform hover:scale-[1.02] transition-transform duration-200 hover:shadow-lg">
+                <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+                  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-[16px] shadow flex-shrink-0 flex items-center justify-center text-4xl">
                     🚪
                   </div>
                   <div className="flex-1">

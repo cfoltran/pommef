@@ -2,13 +2,6 @@ import VoxFooter from "@/app/components/VoxFooter";
 import VoxNavbar from "@/app/components/VoxNavbar";
 import Image from "next/image";
 
-export function generateStaticParams() {
-  return [
-    { lang: 'en' },
-    { lang: 'fr' },
-  ];
-}
-
 export default function Home() {
   return (
     <div className="text-white">
@@ -43,20 +36,7 @@ export default function Home() {
                       className="h-[50px] w-auto"
                     />
                   </a>
-                  {/* <a
-                    href="https://play.google.com/store/apps/details?id=com.cle.unbubl"
-                    className="inline-block transition-transform hover:-translate-y-0.5"
-                  >
-                    <Image
-                      src="/google-play.png"
-                      alt="Download on the Play Store"
-                      width={200}
-                      height={50}
-                      className="h-[50px] w-auto"
-                    />
-                  </a> */}
                 </div>
-                
               </div>
               <div className="flex-1 flex justify-center items-center perspective-1000">
                 <div className="w-[300px] h-[650px] relative flex items-center justify-center bg-[#1a1a1a] rounded-[45px] shadow-[0_0_0_1px_rgba(255,255,255,0.08),0_0_0_2px_rgba(255,255,255,0.03),0_0_30px_rgba(0,0,0,0.5)] border border-white/10">

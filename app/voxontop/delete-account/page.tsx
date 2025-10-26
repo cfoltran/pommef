@@ -1,9 +1,3 @@
-export function generateStaticParams() {
-  return [
-    { lang: 'en' },
-    { lang: 'fr' },
-  ];
-}
 export default function DeleteAccount() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-black to-[#111] text-white">

@@ -71,8 +71,10 @@ export default function TermsAndConditions() {
         <section className="space-y-6">
           <h2 className="text-2xl font-semibold text-white">6. Moderation & User Conduct</h2>
           <p className="text-lg leading-relaxed">
-            Voxontop reserves the right to remove or hide any content that violates these Terms or is deemed inappropriate, 
-            offensive, or illegal. Users who repeatedly violate our guidelines may have their accounts suspended or terminated.  
+            Voxontop does not tolerate objectionable content or abusive behavior. 
+            Users may not post or share content that is illegal, offensive, threatening, defamatory, or otherwise inappropriate. 
+            A reporting system is provided in the app to flag such content. Reported content will be reviewed within 24 hours and may be removed. 
+            Users responsible for such content may be permanently banned from Voxontop.
           </p>
         </section>
 
@@ -123,6 +125,28 @@ export default function TermsAndConditions() {
           <p className="text-lg leading-relaxed">
             <strong className="text-white">Email:</strong> 
             <a href="mailto:contact@pommef.com" className="text-blue-400 hover:text-blue-300"> contact@pommef.com</a>
+          </p>
+        </section>
+
+        {/* 12. End User License Agreement (EULA) */}
+        <section className="space-y-6">
+          <h2 className="text-2xl font-semibold text-white">12. End User License Agreement (EULA)</h2>
+          <p className="text-lg leading-relaxed">
+            This End User License Agreement (“Agreement”) is a binding contract between you (“User”) and Voxontop. 
+            By installing or using the Voxontop app, you agree to comply with this Agreement. If you do not agree, do not use the app.
+          </p>
+          <p className="text-lg leading-relaxed">
+            Voxontop grants you a limited, non-exclusive, non-transferable, revocable license to use the app for personal, non-commercial purposes, 
+            in accordance with these Terms. You may not modify, distribute, reverse engineer, or exploit any part of the app.
+          </p>
+          <p className="text-lg leading-relaxed">
+            There is zero tolerance for objectionable content or abusive behavior. Users must not post or transmit content that is unlawful, 
+            harassing, defamatory, obscene, or otherwise inappropriate. Violation of this policy may result in immediate termination of your account 
+            and removal of offending content.
+          </p>
+          <p className="text-lg leading-relaxed">
+            Voxontop reserves the right to monitor, remove, or restrict content at its discretion. 
+            Reports of objectionable content will be reviewed within 24 hours, and offending users may be permanently banned.
           </p>
         </section>
       </div>

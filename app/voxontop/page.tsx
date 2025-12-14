@@ -25,7 +25,7 @@ export default function Home() {
                 </p>
                 <div className="flex items-center gap-4">
                   <a
-                    href=""
+                    href="https://apps.apple.com/fr/app/voxontop/id6753363277"
                     className="inline-block transition-transform hover:-translate-y-0.5"
                   >
                     <Image

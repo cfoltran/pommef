@@ -13,9 +13,14 @@ const t = {
       link: "https://deckart.xyz"
     },
     unbubl: {
-      title: "Unbubl", 
+      title: "Unbubl",
       description: "Pop into the moment, stay curious! 🧭 Unbubl transforms every walk into a learning adventure with location-based bubbles of knowledge. Get spontaneous notifications with fascinating stories tied to your exact location - whether you're cycling through Paris or exploring new cities. Each journey becomes an opportunity to discover hidden insights and enrich your travels with captivating anecdotes.",
       link: "https://unbubl.com"
+    },
+    voxontop: {
+      title: "Voxontop",
+      description: "There is only one affirmation in the entire world, and it belongs to whoever pays the most. An experiment in influence, power, and collective voice — anyone can comment and react, but only one person can write what the world sees.",
+      link: "https://apps.apple.com/fr/app/voxontop/id6753363277",
     }
   },
   aiTools: {
@@ -38,6 +43,29 @@ export default function Home() {
       <main className="min-h-screen px-4 sm:px-6 md:px-8 max-w-4xl mx-auto pt-24 bg-white text-black">
         <section className="mb-16">
           <div className="max-w-3xl mx-auto flex flex-col gap-6">
+
+            {/* VoxOnTop */}
+            <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md border border-gray-200 transform hover:scale-[1.02] transition-transform duration-200 hover:shadow-lg">
+              <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+                <Image src="/voxontop.png" alt="VoxOnTop app icon" width={96} height={96} className="w-20 h-20 sm:w-24 sm:h-24 flex-shrink-0 rounded-[20px]" />
+                <div className="flex-1">
+                  <h3 className="text-xl font-semibold mb-2 text-left">{t.mobileApps.voxontop.title}</h3>
+                  <p className="text-gray-600 mb-4 text-left leading-relaxed">{t.mobileApps.voxontop.description}</p>
+                  <div className="flex items-center gap-4">
+                    <a
+                      href={t.mobileApps.voxontop.link}
+                      className="inline-flex items-center text-blue-600 hover:underline"
+                    >
+                      Visit {t.mobileApps.voxontop.title}
+                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Deckart */}
             <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md border border-gray-200 transform hover:scale-[1.02] transition-transform duration-200 hover:shadow-lg">
               <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">

@@ -2,59 +2,117 @@ import VoxFooter from "@/app/components/VoxFooter";
 import VoxNavbar from "@/app/components/VoxNavbar";
 import Image from "next/image";
 
-export default function Home() {
+const screenshots = ["0", "1", "2", "3", "4"];
+
+const features = [
+  { icon: "☝️", text: "One affirmation at a time — globally." },
+  { icon: "💸", text: "Bid to claim the top spot." },
+  { icon: "✍️", text: "Write what the whole planet sees." },
+  { icon: "💬", text: "Anyone can comment in real time." },
+  { icon: "📣", text: "Everyone can react." },
+  { icon: "📈", text: "Watch the price fluctuate live." },
+];
+
+export default function VoxontopPage() {
   return (
-    <div className="text-white">
+    <div className="bg-black text-white min-h-screen">
       <VoxNavbar />
-      <div className="pt-16 min-h-screen bg-black text-white">
-        <div className="py-16 bg-gradient-to-b from-black to-[#111]">
-          <div className="container mx-auto px-4">
-            <div className="flex items-center justify-between gap-16 lg:flex-row flex-col">
-              <div className="flex-1 max-w-[600px]">
-                <h2 className="text-5xl font-semibold mb-8 leading-tight bg-gradient-to-r from-white to-[#aaa] bg-clip-text text-transparent">
-                  There is only one affirmation in the entire world, and it belongs to whoever pays the most.
-                </h2>
-                <ul className="list-none p-0 m-0 mb-8">
-                  <li className="text-2xl py-3 flex items-center gap-4">🏔️ One affirmation.</li>
-                  <li className="text-2xl py-3 flex items-center gap-4">💬 Anyone can comment.</li>
-                  <li className="text-2xl py-3 flex items-center gap-4">📣 Everyone can react.</li>
-                  <li className="text-2xl py-3 flex items-center gap-4">☝️ But only one person can write what the world sees.</li>
-                </ul>
-                <p className="text-xl opacity-80 mb-10 leading-relaxed">
-                  Vox on Top is an experiment in understanding the dynamics of influence, power, and collective voice in the digital age. By allowing only one paid affirmation at a time, we aim to explore how monetary influence shapes public discourse and the implications it has on society.
-                </p>
-                <div className="flex items-center gap-4">
-                  <a
-                    href="https://apps.apple.com/fr/app/voxontop/id6753363277"
-                    className="inline-block transition-transform hover:-translate-y-0.5"
-                  >
-                    <Image
-                      src="/app-store.svg"
-                      alt="Download on the App Store"
-                      width={200}
-                      height={50}
-                      className="h-[50px] w-auto"
-                    />
-                  </a>
-                </div>
-              </div>
-              <div className="flex-1 flex justify-center items-center perspective-1000">
-                <div className="w-[300px] h-[650px] relative flex items-center justify-center bg-[#1a1a1a] rounded-[45px] shadow-[0_0_0_1px_rgba(255,255,255,0.08),0_0_0_2px_rgba(255,255,255,0.03),0_0_30px_rgba(0,0,0,0.5)] border border-white/10">
-                  <Image
-                    src="/vox.png"
-                    alt="Voxontop app preview"
-                    width={270}
-                    height={600}
-                    className="rounded-[38px] object-cover shadow-lg w-[94%] h-[94%]"
-                    priority
-                  />
-                </div>
-              </div>
+
+      {/* Hero */}
+      <section className="pt-32 pb-20 px-6">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-xs uppercase tracking-widest text-gray-500 mb-4">
+            Voxontop
+          </p>
+          <h1 className="text-4xl sm:text-5xl font-semibold leading-tight mb-6">
+            One affirmation,{" "}
+            <span className="text-gray-400">many voices.</span>
+          </h1>
+          <p className="text-gray-400 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
+            Only the highest bidder decides what the entire planet sees.
+            An experiment in influence, power, and collective voice.
+          </p>
+          <a
+            href="https://apps.apple.com/fr/app/voxontop/id6753363277"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block transition-transform hover:-translate-y-0.5"
+          >
+            <Image
+              src="/app-store.svg"
+              alt="Download on the App Store"
+              width={160}
+              height={44}
+              className="h-[44px] w-auto mx-auto"
+            />
+          </a>
+        </div>
+      </section>
+
+      {/* Screenshots */}
+      <section className="pb-20 px-6">
+        <div className="flex gap-4 overflow-x-auto pb-4 max-w-5xl mx-auto snap-x snap-mandatory scrollbar-hide">
+          {screenshots.map((n) => (
+            <div
+              key={n}
+              className="flex-shrink-0 snap-center w-[200px] sm:w-[220px]"
+            >
+              <Image
+                src={`/${n}.png`}
+                alt={`Voxontop screenshot ${n}`}
+                width={220}
+                height={476}
+                className="rounded-[28px] w-full h-auto border border-white/10"
+              />
             </div>
+          ))}
+        </div>
+      </section>
+
+      <hr className="border-white/10 mx-6 mb-20" />
+
+      {/* Features */}
+      <section className="pb-20 px-6">
+        <div className="max-w-2xl mx-auto">
+          <h2 className="text-xs uppercase tracking-widest text-gray-500 mb-8">
+            How it works
+          </h2>
+          <ul className="flex flex-col gap-5">
+            {features.map((f) => (
+              <li key={f.text} className="flex items-start gap-4 text-sm text-gray-300 leading-relaxed">
+                <span className="text-xl flex-shrink-0 w-7">{f.icon}</span>
+                {f.text}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <hr className="border-white/10 mx-6 mb-20" />
+
+      {/* About */}
+      <section className="pb-24 px-6">
+        <div className="max-w-2xl mx-auto text-sm text-gray-400 leading-relaxed">
+          <p>
+            Voxontop is a hybrid social network and auction platform.
+            At any given moment, there is one single affirmation visible to every user in the world.
+            Whoever outbids the current holder takes the stage — and writes their message for all to see.
+          </p>
+          <p className="mt-4">
+            Comments, reactions, and price movements happen in real time.
+            The experiment asks: what does it mean when public discourse has a price tag?
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3 text-xs text-gray-600">
+            <span>Free · In-app purchases from €0.99</span>
+            <span>·</span>
+            <span>iOS 15+</span>
+            <span>·</span>
+            <span>16+</span>
           </div>
         </div>
-      </div>
+      </section>
+
       <VoxFooter />
     </div>
   );
-} 
+}

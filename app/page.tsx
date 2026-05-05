@@ -14,7 +14,7 @@ const projects = [
     name: "Deckart",
     type: "iOS/Android App",
     description:
-      "Spaced repetition flashcards for students. Active recall meets gamification. 200+ active users.",
+      "Spaced repetition flashcards for students. Active recall meets gamification. 3000+ active users.",
     link: "https://deckart.xyz",
     external: true,
     icon: "/deckart.png",

@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* No favicon */}
+        <link rel="icon" href="/pommef_logo-05.svg" type="image/svg+xml" />
       </head>
       <body className={inter.className + ' bg-white text-black'}>{children}</body>
     </html>

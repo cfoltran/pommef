@@ -2,6 +2,16 @@ import Image from "next/image";
 
 const projects = [
   {
+    name: "SapiensRank",
+    type: "iOS App",
+    description:
+      "Your real life powers a game of conquest. Sync Apple Health, turn your daily effort into a score, and battle for territory with your guild on a world leaderboard.",
+    link: "https://sapiensrank.com",
+    external: true,
+    appStore: "https://apps.apple.com/fr/app/sapiensrank/id6771508578",
+    icon: "/sapiensrank.png",
+  },
+  {
     name: "Voxontop",
     type: "iOS App",
     description:
@@ -27,6 +37,7 @@ const projects = [
     link: "https://unbubl.com",
     external: true,
     icon: "/unbubl.png",
+    discontinued: true,
   },
   {
     name: "Mcpdoor",
@@ -122,6 +133,11 @@ export default function Home() {
                 <div className="flex flex-wrap items-baseline gap-2 mb-1">
                   <span className="font-bold text-sm">{project.name}</span>
                   <span className="text-xs text-gray-400">[{project.type}]</span>
+                  {project.discontinued && (
+                    <span className="text-[10px] uppercase tracking-wide border border-gray-400 text-gray-400 rounded-full px-2 py-0.5">
+                      discontinued
+                    </span>
+                  )}
                 </div>
                 <p className="text-sm text-gray-600 leading-relaxed mb-3">
                   {project.description}

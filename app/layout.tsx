@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Pomme F",
@@ -19,7 +16,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/pommef_logo-05.svg" type="image/svg+xml" />
       </head>
-      <body className={inter.className + ' bg-white text-black'}>{children}</body>
+      <body className="bg-white text-black">{children}</body>
     </html>
   );
 }

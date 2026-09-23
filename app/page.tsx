@@ -1,9 +1,10 @@
 import Image from "next/image";
+import AnimatedLogo from "./components/AnimatedLogo";
 
 const projects = [
   {
     name: "SapiensRank",
-    type: "iOS App",
+    type: "iOS/Android App",
     description:
       "Your real life powers a game of conquest. Sync Apple Health, turn your daily effort into a score, and battle for territory with your guild on a world leaderboard.",
     link: "https://sapiensrank.com",
@@ -15,7 +16,7 @@ const projects = [
     name: "Voxontop",
     type: "iOS App",
     description:
-      "One affirmation. Whoever pays the most owns it. An experiment in influence, power, and collective voice — anyone can comment, only one person writes what the world sees.",
+      "One affirmation. Whoever pays the most owns it. An experiment in influence, power, and collective voice, anyone can comment, only one person writes what the world sees.",
     link: "/voxontop",
     appStore: "https://apps.apple.com/fr/app/voxontop/id6753363277",
     icon: "/voxontop.png",
@@ -43,7 +44,7 @@ const projects = [
     name: "Mcpdoor",
     type: "AI Tool",
     description:
-      "Your gateway to the MCP ecosystem. One click to connect AI assistants to real-world tools — Maps, Airbnb, and thousands more.",
+      "Your gateway to the MCP ecosystem. One click to connect AI assistants to real-world tools: Maps, Airbnb, and thousands more.",
     link: "https://mcpdoor.com",
     external: true,
     emoji: "🚪",
@@ -60,13 +61,7 @@ export default function Home() {
     >
       {/* Header */}
       <header >
-        <Image
-          src="/pommef_logo-05.svg"
-          alt="pommef"
-          width={70}
-          height={70}
-          className="mb-8 mx-auto"
-        />
+        <AnimatedLogo width={70} className="mb-8 mx-auto block" />
         
         <div className="flex items-center gap-4">
           <Image
@@ -79,8 +74,8 @@ export default function Home() {
           />
           <div className="text-sm leading-loose">
             <span className="font-bold">Clément Foltran</span>
-            {" — "}
-            indie maker · AI mobile engineer
+            {" - "}
+            Indie maker - AI mobile engineer
           </div>
         </div>
       </header>
@@ -90,7 +85,7 @@ export default function Home() {
       {/* About */}
       <section className="mb-8 text-sm leading-relaxed">
         <p>
-          I build agentic AI apps and mobile tools — mostly solo, always
+          I build agentic AI apps and mobile tools - mostly solo, always
           shipping. Background in mobile and full-stack web.
           I worked in various field such as banking, crypto, medical, deep space...
         </p>
